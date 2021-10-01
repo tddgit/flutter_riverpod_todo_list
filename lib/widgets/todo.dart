@@ -11,38 +11,47 @@ class TodoWidget extends StatelessWidget {
   final Todo todo;
 
   Widget _buildTodo(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Checkbox(
-          value: todo.isDone,
-          activeColor: Theme.of(context).primaryColor,
-          checkColor: Colors.white,
-          onChanged: (_) {
-            todo.isDone = !todo.isDone;
-          },
-        ),
-        SizedBox(width: 20),
-        Expanded(
-          child: Column(
-            children: [
-              Text(
-                todo.title,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).primaryColor,
-                  fontSize: 22,
-                ),
-              ),
-              SizedBox(height: 8),
-              if (todo.description.isNotEmpty)
-                Container(
-                  margin: EdgeInsets.only(top: 4),
-                  child: Text(todo.description),
-                ),
-            ],
+    return Container(
+      color: Colors.white,
+      padding: EdgeInsets.only(
+        top: 12,
+        bottom: 12,
+      ),
+      child: Row(
+        // mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Checkbox(
+            value: todo.isDone,
+            activeColor: Theme.of(context).primaryColor,
+            checkColor: Colors.white,
+            onChanged: (_) {
+              todo.isDone = !todo.isDone;
+            },
           ),
-        ),
-      ],
+          SizedBox(width: 20),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  todo.title,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 22,
+                  ),
+                ),
+                SizedBox(height: 8),
+                if (todo.description.isNotEmpty)
+                  Container(
+                    margin: EdgeInsets.only(top: 4),
+                    child: Text(todo.description),
+                  ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 

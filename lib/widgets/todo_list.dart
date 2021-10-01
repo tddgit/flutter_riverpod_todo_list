@@ -13,18 +13,28 @@ class TodoListWidget extends StatelessWidget {
     final TodosProvider provider = Provider.of<TodosProvider>(context);
     final todos = provider.todos;
 
-    return ListView.separated(
-      physics: BouncingScrollPhysics(),
-      padding: EdgeInsets.all(16),
-      itemBuilder: (context, index) {
-        final todo = todos[index];
+    return todos.isEmpty
+        ? Center(
+            child: Text(
+              'No todos',
+              style: TextStyle(fontSize: 20),
+            ),
+          )
+        : ListView.separated(
+            physics: BouncingScrollPhysics(),
+            padding: EdgeInsets.all(16),
+            itemBuilder: (context, index) {
+              final todo = todos[index];
 
-        return TodoWidget(todo: todo);
-      },
-      separatorBuilder: (context, index) => Container(
-        height: 8,
-      ),
-      itemCount: todos.length,
-    );
+              return ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: TodoWidget(todo: todo),
+              );
+            },
+            separatorBuilder: (context, index) => Container(
+              height: 32,
+            ),
+            itemCount: todos.length,
+          );
   }
 }

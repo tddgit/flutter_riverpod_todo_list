@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod_todo_list/main.dart';
 import 'package:flutter_riverpod_todo_list/widgets/add_to_do_dialog.dart';
 import 'package:flutter_riverpod_todo_list/widgets/todo_list.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.title}) : super(key: key);
@@ -27,7 +28,8 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(MyApp.title),
       ),
-      body: Center(),
+      body: tabs[selectedIndex],
+      backgroundColor: Theme.of(context).backgroundColor,
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).primaryColor,
         unselectedItemColor: Colors.white.withOpacity(0.7),
@@ -40,13 +42,11 @@ class _HomePageState extends State<HomePage> {
         ),
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.fact_check_outlined,
-            ),
+            icon: FaIcon(FontAwesomeIcons.listOl),
             label: 'Todos',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.done),
+            icon: FaIcon(FontAwesomeIcons.check),
             label: 'Completed',
           ),
         ],
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
           borderRadius: BorderRadius.circular(20),
         ),
         backgroundColor: Colors.black,
-        child: Icon(Icons.add),
+        child: FaIcon(FontAwesomeIcons.plus),
       ),
     );
   }

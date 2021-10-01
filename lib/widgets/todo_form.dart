@@ -19,33 +19,40 @@ class TodoFormWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-        child: Column(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        _buildTitle(),
-        SizedBox(height: 8),
-        _buildDescription(),
-        SizedBox(height: 8),
-        _buildButton(),
-      ],
-    ));
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          _buildTitle(),
+          const SizedBox(
+            height: 8,
+          ),
+          _buildDescription(),
+          const SizedBox(
+            height: 8,
+          ),
+          _buildButton(),
+        ],
+      ),
+    );
   }
 
   Widget _buildTitle() {
     return TextFormField(
-        maxLines: 2,
-        decoration: InputDecoration(
-          border: UnderlineInputBorder(),
-          labelText: 'Title',
-        ),
-        initialValue: title,
-        onChanged: onChangedTitle,
-        validator: (title) {
-          if (title!.isEmpty) {
-            return 'The title cannot be empty';
-          }
-          return null;
-        });
+      maxLines: 2,
+      decoration: InputDecoration(
+        border: UnderlineInputBorder(),
+        labelText: 'Title',
+      ),
+      initialValue: title,
+      onChanged: onChangedTitle,
+      validator: (title) {
+        if (title!.isEmpty) {
+          return 'The title cannot be empty';
+        }
+
+        return null;
+      },
+    );
   }
 
   Widget _buildDescription() {
@@ -59,8 +66,10 @@ class TodoFormWidget extends StatelessWidget {
       onChanged: onChangedDescription,
       validator: (description) {
         if (description!.isEmpty) {
+          
           return 'The description cannot be empty';
         }
+
         return null;
       },
     );

@@ -37,10 +37,17 @@ class _HomePageState extends State<HomePage> {
             selectedIndex = index;
           },
         ),
-        items: [
+        items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.fact_check_outlined), label: 'Todos'),
-          BottomNavigationBarItem(icon: Icon(Icons.done), label: 'Completed'),
+            icon: Icon(
+              Icons.fact_check_outlined,
+            ),
+            label: 'Todos',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.done),
+            label: 'Completed',
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(

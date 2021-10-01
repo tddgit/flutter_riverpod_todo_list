@@ -8,7 +8,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  static final String title = 'Todo App';
+  static const String title = 'Todo App';
 
   @override
   // ignore: flutter_style_todos

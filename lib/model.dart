@@ -5,15 +5,15 @@ class TodoField {
 class Todo {
   Todo({
     required this.createdTime,
-    required this.description,
+    this.description = '',
     required this.id,
     required this.title,
-    required this.isDone,
+    this.isDone = false,
   });
 
   DateTime createdTime;
   String description;
   String id;
-  bool isDone;
+  bool isDone = false;
   String title;
 }

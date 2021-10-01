@@ -32,8 +32,6 @@ analyzer:
     avoid_types_on_closure_parameters: ignore
     use_key_in_widget_constructors: ignore
 
-
-
 dart_code_metrics:
   anti-patterns:
     - long-method
@@ -67,7 +65,6 @@ dart_code_metrics:
     - prefer-trailing-comma
 linter:
   rules:
-
     - always_put_control_body_on_new_line
     - always_put_required_named_parameters_first
     #    - always_specify_types

@@ -11,7 +11,9 @@ class MyApp extends StatelessWidget {
   static final String title = 'Todo App';
 
   @override
+  // ignore: flutter_style_todos
   Widget build(BuildContext context) {
+    // TODO: Add function
     return ChangeNotifierProvider(
       create: (context) {
         return ChangeNotifier();

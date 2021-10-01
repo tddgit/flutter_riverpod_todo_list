@@ -32,7 +32,7 @@ class TodoListWidget extends StatelessWidget {
               );
             },
             separatorBuilder: (context, index) => Container(
-              height: 32,
+              height: 16,
             ),
             itemCount: todos.length,
           );
